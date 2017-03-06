@@ -14,3 +14,5 @@ PS1="\[\033[38;5;10m\]\u@\h\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\
 . /etc/profile.d/vte.sh
 alias systemctl='sudo systemctl'
 alias update='sudo pacman -Syu --noconfirm && yaourt -Sbu --aur --noconfirm'
+export WORKON_HOME=$HOME/.virtualenvs
+source /usr/bin/virtualenvwrapper.sh
