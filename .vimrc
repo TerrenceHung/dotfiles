@@ -17,7 +17,7 @@ Plugin 'jistr/vim-nerdtree-tabs'
 " if vim --version does not show python3 support, then sudo apt-get install vim-nox
 " Plugin 'valloric/youcompleteme'
 Plugin 'chriskempson/vim-tomorrow-theme'
-Plugin 'scrooloose/syntastic'
+" Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
 Plugin 'TagHighlight'
 Plugin 'sickill/vim-monokai'
