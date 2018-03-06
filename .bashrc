@@ -10,9 +10,8 @@ parse_git_branch() {
 }
 
 alias ls='ls --color=auto'
+alias grep='grep --color=auto'
 PS1="\[\033[38;5;10m\]\u@\h\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;75m\]\W\[$(tput sgr0)\]\[\033[38;5;15m\]\[\033[38;5;11m\]\$(parse_git_branch) \[$(tput sgr0)\]\[\033[38;5;75m\]\\$\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
-. /etc/profile.d/vte.sh
-alias systemctl='sudo systemctl'
-alias update='sudo pacman -Syu --noconfirm && yaourt -Sbu --aur --noconfirm'
-export WORKON_HOME=$HOME/.virtualenvs
-source /usr/bin/virtualenvwrapper.sh
+export VISUAL=vim
+export EDITOR="$VISUAL"
+alias update='sudo apt update; sudo apt upgrade'
