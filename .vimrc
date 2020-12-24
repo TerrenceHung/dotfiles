@@ -48,6 +48,7 @@ colorscheme seoul256
 set expandtab
 set tabstop=4
 set shiftwidth=4
+set smarttab
 " disable auto comment on next line
 autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
 nmap <F8> :TagbarToggle<CR>
