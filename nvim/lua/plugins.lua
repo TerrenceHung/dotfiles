@@ -14,7 +14,12 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
-    use 'cpea2506/one_monokai.nvim'
+    use {
+        'cpea2506/one_monokai.nvim',
+        config = function ()
+            vim.cmd.colorscheme 'one_monokai'
+        end
+    }
     use {
         'nvim-treesitter/nvim-treesitter',
         run = function()
@@ -29,7 +34,12 @@ return require('packer').startup(function(use)
             require('Comment').setup()
         end
     }
-    use 'ojroques/nvim-hardline'
+    use {
+        'ojroques/nvim-hardline',
+        config = function()
+            require('hardline').setup {}
+        end
+    }
     use 'easymotion/vim-easymotion'
 
     if packer_bootstrap then

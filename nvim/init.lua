@@ -1,7 +1,5 @@
 require('plugins')
 
-require('hardline').setup {}
-
 vim.o.termguicolors = true
 vim.o.syntax = 'on'
 vim.o.errorbells = false
@@ -21,5 +19,3 @@ vim.o.expandtab = true
 vim.wo.number = true
 -- vim.wo.relativenumber = true
 -- vim.wo.signcolumn = 'yes'
-
-vim.cmd.colorscheme 'one_monokai'
