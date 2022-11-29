@@ -15,8 +15,14 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     use {
+        'lewis6991/impatient.nvim',
+        config = function()
+            require('impatient')
+        end
+    }
+    use {
         'cpea2506/one_monokai.nvim',
-        config = function ()
+        config = function()
             vim.cmd.colorscheme 'one_monokai'
         end
     }
@@ -41,6 +47,19 @@ return require('packer').startup(function(use)
         end
     }
     use 'easymotion/vim-easymotion'
+    use {
+        'gelguy/wilder.nvim',
+        config = function()
+            local wilder = require('wilder')
+            wilder.setup({modes = {':', '/', '?'}})
+        end
+    }
+    use {
+        'lewis6991/gitsigns.nvim',
+        config = function()
+            require('gitsigns').setup()
+        end
+    }
 
     if packer_bootstrap then
         require('packer').sync()
