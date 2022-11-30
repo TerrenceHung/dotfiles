@@ -19,3 +19,15 @@ vim.o.expandtab = true
 vim.wo.number = true
 -- vim.wo.relativenumber = true
 -- vim.wo.signcolumn = 'yes'
+
+local key_mapper = function(mode, key, result, opts)
+    local options = { noremap = true, silent = true }
+
+    if opts then
+        options = vim.tbl_extend('force', options, opts)
+    end
+
+    vim.api.nvim_set_keymap(mode, key, result, options)
+end
+
+key_mapper('n', '<ESC><ESC>', '<ESC>:noh<CR><ESC>')
