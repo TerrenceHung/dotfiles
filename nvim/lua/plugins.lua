@@ -20,6 +20,7 @@ return require('packer').startup(function(use)
       require('impatient')
     end
   }
+
   -- UI
   use {
     'cpea2506/one_monokai.nvim',
@@ -42,6 +43,16 @@ return require('packer').startup(function(use)
     'numToStr/Comment.nvim',
     config = function()
       require('Comment').setup()
+    end
+  }
+  use {
+    'cappyzawa/trim.nvim',
+    config = function()
+      require('trim').setup({
+        patterns = {
+          [[%s/\(\n\n\)\n\+/\1/]],   -- replace multiple blank lines with a single line
+        },
+      })
     end
   }
 
