@@ -14,6 +14,13 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
+  vim.cmd([[
+    augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerCompile
+    augroup end
+  ]])
+
   use {
     'lewis6991/impatient.nvim',
     config = function()
@@ -31,7 +38,7 @@ return require('packer').startup(function(use)
   use {
     'ojroques/nvim-hardline',
     config = function()
-      require('hardline').setup {}
+      require('hardline').setup()
     end
   }
 
