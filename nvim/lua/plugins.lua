@@ -12,56 +12,62 @@ end
 local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
-    use 'wbthomason/packer.nvim'
+  use 'wbthomason/packer.nvim'
 
-    use {
-        'lewis6991/impatient.nvim',
-        config = function()
-            require('impatient')
-        end
-    }
-    use {
-        'cpea2506/one_monokai.nvim',
-        config = function()
-            vim.cmd.colorscheme 'one_monokai'
-        end
-    }
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        run = function()
-            local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-            ts_update()
-        end,
-    }
-    use 'm4xshen/autoclose.nvim'
-    use {
-        'numToStr/Comment.nvim',
-        config = function()
-            require('Comment').setup()
-        end
-    }
-    use {
-        'ojroques/nvim-hardline',
-        config = function()
-            require('hardline').setup {}
-        end
-    }
-    use 'easymotion/vim-easymotion'
-    use {
-        'gelguy/wilder.nvim',
-        config = function()
-            local wilder = require('wilder')
-            wilder.setup({modes = {':', '/', '?'}})
-        end
-    }
-    use {
-        'lewis6991/gitsigns.nvim',
-        config = function()
-            require('gitsigns').setup()
-        end
-    }
-
-    if packer_bootstrap then
-        require('packer').sync()
+  use {
+    'lewis6991/impatient.nvim',
+    config = function()
+      require('impatient')
     end
+  }
+  -- UI
+  use {
+    'cpea2506/one_monokai.nvim',
+    config = function()
+      vim.cmd.colorscheme 'one_monokai'
+    end
+  }
+  use {
+    'ojroques/nvim-hardline',
+    config = function()
+      require('hardline').setup {}
+    end
+  }
+
+  -- Editor
+  use 'm4xshen/autoclose.nvim'
+  use 'easymotion/vim-easymotion'
+  use 'tpope/vim-sleuth'
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
+  }
+
+  -- Misc
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = function()
+      local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+      ts_update()
+    end
+  }
+  use {
+    'gelguy/wilder.nvim',
+    config = function()
+      local wilder = require('wilder')
+      wilder.setup({modes = {':', '/', '?'}})
+    end
+  }
+  use {
+    'lewis6991/gitsigns.nvim',
+    config = function()
+      require('gitsigns').setup()
+    end
+  }
+
+  if packer_bootstrap then
+    require('packer').sync()
+  end
 end)
