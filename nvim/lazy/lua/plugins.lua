@@ -6,12 +6,7 @@ return {
       vim.cmd([[colorscheme one_monokai]])
     end
   },
-  {
-    "ojroques/nvim-hardline",
-    config = function()
-      require("hardline").setup()
-    end
-  },
+  "ojroques/nvim-hardline",
   "m4xshen/autoclose.nvim",
   "easymotion/vim-easymotion",
   "tpope/vim-sleuth",
@@ -26,7 +21,10 @@ return {
   },
   {
     "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
+    build = function()
+      local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+      ts_update()
+    end
   },
   {
     "gelguy/wilder.nvim",
