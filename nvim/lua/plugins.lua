@@ -1,5 +1,5 @@
 return {
-  "lewis6991/impatient.nvim",
+  -- UI
   {
     "cpea2506/one_monokai.nvim",
     config = function()
@@ -8,14 +8,17 @@ return {
   },
   {
     "ojroques/nvim-hardline",
-    config = function()
-      require("hardline").setup()
-    end
+    opts = {},
   },
+
+  -- Editor
   "m4xshen/autoclose.nvim",
   "easymotion/vim-easymotion",
   "tpope/vim-sleuth",
-  "numToStr/Comment.nvim",
+  {
+    "numToStr/Comment.nvim",
+    opts = {},
+  },
   {
     "cappyzawa/trim.nvim",
     opts = {
@@ -24,6 +27,8 @@ return {
       },
     },
   },
+
+  -- Misc
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
@@ -36,8 +41,6 @@ return {
   },
   {
     "lewis6991/gitsigns.nvim",
-    config = function()
-      require("gitsigns").setup()
-    end
+    opts = {},
   }
 }
