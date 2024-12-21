@@ -50,12 +50,6 @@ return {
     build = ":TSUpdate",
   },
   {
-    "gelguy/wilder.nvim",
-    opts = {
-      modes = {":", "/", "?"},
-    },
-  },
-  {
     "lewis6991/gitsigns.nvim",
     opts = {},
     lazy = true,
