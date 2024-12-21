@@ -13,7 +13,23 @@ return {
 
   -- Editor
   "m4xshen/autoclose.nvim",
-  "easymotion/vim-easymotion",
+  {
+    "smoka7/hop.nvim",
+    version = "*",
+    opts = {
+      keys = "etovxqpdygfblzhckisuran"
+    },
+    init = function()
+      local hop = require("hop")
+      local directions = require("hop.hint").HintDirection
+      vim.keymap.set("", "<Leader><Leader>w", function()
+        hop.hint_words({ direction = directions.AFTER_CURSOR })
+      end, { remap=true })
+      vim.keymap.set("", "<Leader><Leader>b", function()
+        hop.hint_words({ direction = directions.BEFORE_CURSOR })
+      end, { remap=true })
+    end
+  },
   "tpope/vim-sleuth",
   {
     "numToStr/Comment.nvim",
